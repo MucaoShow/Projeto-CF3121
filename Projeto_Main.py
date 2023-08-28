@@ -24,7 +24,7 @@ def Menu():
     print(60*"=")
     print("Projeto 3 de CF3121 versão 1.0.0")
     print(60*"=") 
-    print('''
+    comando = int(input('''
         [1] Calcular a Energia de um Fóton 
         [2] Valor do Número Quântico 'n'
         [3] Entrada do Estado 'ni' inicial e Estado final 'nf'
@@ -33,36 +33,37 @@ def Menu():
 
         [9] Informações sobre o sistema
         [0] Sair
-        ''')
+                        
+        Qaul opção deseja: '''))
     print(60*"=")
-    comando = int(input("Digite a sua opção: "))
-    print(60*"=")
     
-    if   comando == 1:   
-        Parte_1.Energia_Foton()
-
-    elif comando == 2:
-        Parte_1.Numero_Quantico()
     
-    elif comando == 3:
-        Parte_2.n_emi_abs()
+    match comando:   
+        case 1:
+            Parte_1.Energia_Foton()
 
-    elif comando == 4:
-        Parte_2.serie_hidro()
+        case 2:
+            Parte_1.Numero_Quantico()
     
-    elif comando == 5:
-        Parte_2.foton_incid()
+        case 3:
+            Parte_2.n_emi_abs()
 
-    elif comando == 9:
-        Parte_1.infos()
+        case 4:
+            Parte_2.serie_hidro()
+    
+        case 5:
+            Parte_2.foton_incid()
 
-    elif comando == 0:
-        print(60*"=")
-        print("Tchau, até logo!")
-        print("Obrigado Pela Preferência! ")
-        print(60*"=")
+        case 9:
+            Parte_1.infos()
 
-    else:
+        case 0:
+            print(60*"=")
+            print("Tchau, até logo!")
+            print("Obrigado Pela Preferência! ")
+            print(60*"=")
+
+    if comando > 9 or comando < 0:
         print(60*"=")
         print("Tente outro Número!")
         print(60*"=")
